@@ -1,0 +1,102 @@
+cd /home/andreas/GLtron/gltron/src/video/
+make -k 
+source='recognizer.c' object='recognizer.o' libtool=no \
+depfile='.deps/recognizer.Po' tmpdepfile='.deps/recognizer.TPo' \
+depmode=gcc /bin/sh ../../depcomp \
+gcc -DPACKAGE=\"gltron\" -DVERSION=\"0.63alpha1\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBSMPEG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBSMPEG=1 -DHAVE_LIBMIKMOD=1 -DSTDC_HEADERS=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_STRSTR=1 -DHAVE_MKSTEMP=1  -I. -I.   -DLOCAL_DATA -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/local/include/SDL -D_REENTRANT -c `test -f recognizer.c || echo './'`recognizer.c
+recognizer.c: In function `drawRecognizer':
+recognizer.c:83: `Point' undeclared (first use in this function)
+recognizer.c:83: (Each undeclared identifier is reported only once
+recognizer.c:83: for each function it appears in.)
+recognizer.c:83: parse error before `p'
+recognizer.c:88: `p' undeclared (first use in this function)
+recognizer.c:88: `v' undeclared (first use in this function)
+make: *** [recognizer.o] Error 1
+source='trail.c' object='trail.o' libtool=no \
+depfile='.deps/trail.Po' tmpdepfile='.deps/trail.TPo' \
+depmode=gcc /bin/sh ../../depcomp \
+gcc -DPACKAGE=\"gltron\" -DVERSION=\"0.63alpha1\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBSMPEG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBSMPEG=1 -DHAVE_LIBMIKMOD=1 -DSTDC_HEADERS=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_STRSTR=1 -DHAVE_MKSTEMP=1  -I. -I.   -DLOCAL_DATA -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/local/include/SDL -D_REENTRANT -c `test -f trail.c || echo './'`trail.c
+trail.c: In function `getSegmentEndX':
+trail.c:39: `line' undeclared (first use in this function)
+trail.c:39: (Each undeclared identifier is reported only once
+trail.c:39: for each function it appears in.)
+cc1: warnings being treated as errors
+trail.c:35: warning: unused variable `s'
+trail.c:34: warning: `tlength' might be used uninitialized in this function
+trail.c: In function `getSegmentEndY':
+trail.c:47: `Line' undeclared (first use in this function)
+trail.c:47: `line' undeclared (first use in this function)
+trail.c:46: warning: `tlength' might be used uninitialized in this function
+trail.c: At top level:
+trail.c:58: parse error before `*'
+trail.c: In function `getSegmentEndUV':
+trail.c:58: number of arguments doesn't match prototype
+../../src/include/video/video.h:263: prototype declaration
+trail.c:60: `data' undeclared (first use in this function)
+trail.c:60: `line' undeclared (first use in this function)
+trail.c:59: warning: `tlength' might be used uninitialized in this function
+trail.c: At top level:
+trail.c:67: parse error before `*'
+trail.c: In function `getSegmentUV':
+trail.c:67: number of arguments doesn't match prototype
+../../src/include/video/video.h:262: prototype declaration
+trail.c:69: `line' undeclared (first use in this function)
+trail.c:68: warning: `tlength' might be used uninitialized in this function
+trail.c: In function `drawTrailLines':
+trail.c:80: `Line' undeclared (first use in this function)
+trail.c:80: `line' undeclared (first use in this function)
+trail.c:80: warning: statement with no effect
+trail.c:81: parse error before `float'
+trail.c:91: `data' undeclared (first use in this function)
+trail.c:92: `cam' undeclared (first use in this function)
+trail.c:94: `height' undeclared (first use in this function)
+trail.c:116: `dist' undeclared (first use in this function)
+trail.c:117: `alpha' undeclared (first use in this function)
+trail.c:119: `trail_top' undeclared (first use in this function)
+trail.c:121: `normal' undeclared (first use in this function)
+make: *** [trail.o] Error 1
+source='trail_geometry.c' object='trail_geometry.o' libtool=no \
+depfile='.deps/trail_geometry.Po' tmpdepfile='.deps/trail_geometry.TPo' \
+depmode=gcc /bin/sh ../../depcomp \
+gcc -DPACKAGE=\"gltron\" -DVERSION=\"0.63alpha1\" -DHAVE_LIBGL=1 -DHAVE_LIBZ=1 -DHAVE_LIBPNG=1 -DHAVE_LIBSMPEG=1 -DHAVE_LIBOGG=1 -DHAVE_LIBVORBIS=1 -DHAVE_LIBVORBISFILE=1 -DHAVE_LIBSMPEG=1 -DHAVE_LIBMIKMOD=1 -DSTDC_HEADERS=1 -DHAVE_UNISTD_H=1 -DHAVE_GL_GL_H=1 -Dconst= -DHAVE_STRSTR=1 -DHAVE_MKSTEMP=1  -I. -I.   -DLOCAL_DATA -DSNAP_DIR=\"~\" -DPREF_DIR=\"~\" -I../../lua/include -I../../nebu/include -I../../src/include -DSEPARATOR="'/'" -Wall -Werror -Os -I/usr/local/include/SDL -D_REENTRANT -c `test -f trail_geometry.c || echo './'`trail_geometry.c
+trail_geometry.c:41: parse error before `Line'
+trail_geometry.c: In function `storeVertex':
+trail_geometry.c:43: number of arguments doesn't match prototype
+../../src/include/video/trail_geometry.h:19: prototype declaration
+trail_geometry.c:44: `pMesh' undeclared (first use in this function)
+trail_geometry.c:44: (Each undeclared identifier is reported only once
+trail_geometry.c:44: for each function it appears in.)
+trail_geometry.c:44: `offset' undeclared (first use in this function)
+trail_geometry.c:59: `line' undeclared (first use in this function)
+trail_geometry.c:66: `fTotalLength' undeclared (first use in this function)
+trail_geometry.c:68: `t' undeclared (first use in this function)
+trail_geometry.c:70: `fFloor' undeclared (first use in this function)
+trail_geometry.c:71: `fSegLength' undeclared (first use in this function)
+trail_geometry.c:78: `fTop' undeclared (first use in this function)
+trail_geometry.c: At top level:
+trail_geometry.c:106: parse error before `*'
+trail_geometry.c: In function `cmpdir':
+trail_geometry.c:106: number of arguments doesn't match prototype
+trail_geometry.c:9: prototype declaration
+trail_geometry.c:107: `line1' undeclared (first use in this function)
+trail_geometry.c:107: `line2' undeclared (first use in this function)
+trail_geometry.c: In function `trailGeometry':
+trail_geometry.c:123: structure has no member named `ex'
+trail_geometry.c:123: structure has no member named `sx'
+trail_geometry.c:124: structure has no member named `ey'
+trail_geometry.c:124: structure has no member named `sy'
+trail_geometry.c:146: `Line' undeclared (first use in this function)
+trail_geometry.c:146: parse error before `line'
+trail_geometry.c:147: `line' undeclared (first use in this function)
+trail_geometry.c:147: structure has no member named `sx'
+trail_geometry.c:148: structure has no member named `sy'
+cc1: warnings being treated as errors
+trail_geometry.c:120: warning: `fSegLength' might be used uninitialized in this function
+trail_geometry.c: In function `bowGeometry':
+trail_geometry.c:206: `Line' undeclared (first use in this function)
+trail_geometry.c:206: parse error before `line'
+trail_geometry.c:211: `line' undeclared (first use in this function)
+make: *** [trail_geometry.o] Error 1
+make: Target `all' not remade because of errors.
+
+Compilation exited abnormally with code 2 at Mon Sep 15 19:25:33
