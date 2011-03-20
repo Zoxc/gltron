@@ -3,9 +3,7 @@ SUBDIRS=lib
 noinst_LIBRARIES=liblua.a
 
 DEFS=
-AM_CPPFLAGS=
 AM_CFLAGS=-ansi -pedantic -Wall -I$(srcdir) -I$(top_srcdir)/lua/include
-LDFLAGS=
 LIBS=-lm
 
 liblua_a_SOURCES=lapi.c lcode.c ldebug.c ldo.c lfunc.c lgc.c llex.c lmem.c \
