@@ -1,7 +1,7 @@
 #ifndef __GL2GLES_H__
 #define __GL2GLES_H__
 
-#include <gles\gl.h>
+#include <GLES/gl.h>
 
 
 #define glColor4fv(color_4v) glColor4f(color_4v[0],color_4v[1],color_4v[2],color_4v[3])
