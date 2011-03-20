@@ -7,7 +7,7 @@ extern "C" {
 #include "audio/sound_glue.h"
 
 #include "SDL.h"
-#include "SDL_sound.h"
+#include "SDL/SDL_sound.h"
 
 static Sound::System *sound = NULL;
 static Sound::SourceMusic *music = NULL;

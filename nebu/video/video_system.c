@@ -25,7 +25,7 @@ void SystemInitDisplayMode(int f, unsigned char full) {
 
   flags = f;
   //S60: R.K. symbian changed 
-  fullscreen = SYSTEM_FULLSCREEN;
+  fullscreen = 0;//SYSTEM_FULLSCREEN;
   if(!video_initialized) {
     if(SDL_InitSubSystem(SDL_INIT_VIDEO) < 0) {
       fprintf(stderr, "[system] can't initialize Video: %s\n", SDL_GetError());
@@ -43,12 +43,15 @@ void SystemInitDisplayMode(int f, unsigned char full) {
     zdepth = 16;
     bitdepth = 16;
   }
+
   if(flags & SYSTEM_DEPTH)
-    ;//SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, zdepth);
+     swl_set_config(SWLC_DEPTH_SIZE, zdepth);
+
   if(flags & SYSTEM_STENCIL)
-     ;//SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8);
+     swl_set_config(SWLC_STENCIL_SIZE, 8);
   else 
-     ;//SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 0);
+     swl_set_config(SWLC_STENCIL_SIZE, 0);
+  
   video_initialized = 1;
   /* FIXME: bitdepth value unused */
 }
@@ -72,6 +75,8 @@ int SystemCreateWindow(char *name) {
 
   if(SDL_GetWMInfo(&sysInfo) <= 0)
     exit(1); /* OK: critical, no visual */
+
+  swl_set_config(SWLC_OPENGL_VERSION, SWLV_OPENGL_ES);
 
   enum swl_result result = swl_context_allocate(sysInfo.info.x11.window, XOpenDisplay(0));
 

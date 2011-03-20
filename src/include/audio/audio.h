@@ -12,7 +12,7 @@ enum {
 };
 
 #include "SDL.h"
-#include "SDL_sound.h"
+#include "SDL/SDL_sound.h"
 
 #include <zlib.h>
 #include <assert.h>

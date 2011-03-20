@@ -8,7 +8,7 @@ extern "C" {
 #include "audio/nebu_Source.h"
 #include "base/nebu_Vector3.h"
 
-#include "SDL_sound.h"
+#include "SDL/SDL_sound.h"
 
 namespace Sound {
   extern "C" {
