@@ -1,7 +1,6 @@
 #ifndef NEBU_RENDERER_GL_H
 #define NEBU_RENDERER_GL_H
 
-#include "SDL_gliop.h"
 #include <stdio.h>
 #include "video/nebu_quad.h"
 

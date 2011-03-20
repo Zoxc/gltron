@@ -5,7 +5,7 @@
 #include "video/recognizer.h"
 #include "video/explosion.h"
 
-#include "gl2gles.h"
+#include "video/gl2gles.h"
 
 // static float arena[] = { 1.0, 1.2, 1, 0.0 };
 

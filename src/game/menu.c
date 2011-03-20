@@ -3,7 +3,7 @@
 
 #include <string.h>
 
-#include "gl2gles.h"
+#include "video/gl2gles.h"
 
 void drawMenu(Visual *d) {
   /* draw Menu pCurrent */

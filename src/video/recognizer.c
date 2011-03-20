@@ -1,6 +1,6 @@
 #include "video/video.h"
 #include <math.h>
-#include "gl2gles.h"
+#include "video/gl2gles.h"
 
 static float alpha = 0;
 

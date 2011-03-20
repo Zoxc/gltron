@@ -1,7 +1,7 @@
 #include "video/video.h"
 #include "game/game.h"
 
-#include "gl2gles.h"
+#include "video/gl2gles.h"
 
 #define TEX_SPLIT (1.0 - BOW_DIST2) / (1 - BOW_DIST1)
 #undef TEX_SPLIT

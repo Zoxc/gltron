@@ -22,9 +22,9 @@
 #define SNAP_DIR "c:/GLTRON/SNAP"
 #define DATA_DIR "c:/GLTRON/DATA"
 #else
-#define PREF_DIR "e:/GLTRON/PERF"
-#define SNAP_DIR "e:/GLTRON/SNAP"
-#define DATA_DIR "e:/GLTRON/DATA"
+#define PREF_DIR "./pref"
+#define SNAP_DIR "./snap"
+#define DATA_DIR "./data"
 #endif
 #define SEPARATOR '/'
 

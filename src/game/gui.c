@@ -3,7 +3,7 @@
 #include <math.h>
 
 #include "game/gltron.h"
-#include "gl2gles.h"
+#include "video/gl2gles.h"
 
 /* FIXME: "ignored playMenuFX" */
 void playMenuFX(int foo) { }

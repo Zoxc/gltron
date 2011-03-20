@@ -6,10 +6,7 @@
 #include <stdlib.h>
 
 // #include <GL/gl.h>
-#define NO_SDL_GLEXT
-#include <SDL_gliop.h>
-
-#include "gl2gles.h"
+#include "video/gl2gles.h"
 
 #define FTX_ERR "[FontTex error]: "
 

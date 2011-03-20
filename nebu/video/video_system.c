@@ -1,7 +1,9 @@
-#include "Nebu_video.h"
+#include "../include/video/nebu_video_system.h"
 
 #include "SDL.h"
-#include "SDL_gliop.h"
+#include <SDL_syswm.h>
+#include <swl-utils.h>
+#include <GLES/gl.h>
 
 static SDL_Surface *screen;
 static int width, height;
@@ -10,7 +12,7 @@ static int fullscreen;
 extern int video_initialized;
 
 void SystemSwapBuffers() {
-  SDL_GL_SwapBuffers();
+  swl_swap();
 }
 
 void SystemInitWindow(int x, int y, int w, int h) {
@@ -30,8 +32,9 @@ void SystemInitDisplayMode(int f, unsigned char full) {
       exit(1); /* OK: critical, no visual */
     }
   }
+
   if(flags & SYSTEM_DOUBLE)
-    SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1);
+   ;// SDL_GL_SetAttribute( SDL_GL_DOUBLEBUFFER, 1);
 
   if(flags & SYSTEM_32_BIT) {
     zdepth = 24;
@@ -41,21 +44,21 @@ void SystemInitDisplayMode(int f, unsigned char full) {
     bitdepth = 16;
   }
   if(flags & SYSTEM_DEPTH)
-    SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, zdepth);
+    ;//SDL_GL_SetAttribute( SDL_GL_DEPTH_SIZE, zdepth);
   if(flags & SYSTEM_STENCIL)
-     SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8);
+     ;//SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 8);
   else 
-     SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 0);
+     ;//SDL_GL_SetAttribute( SDL_GL_STENCIL_SIZE, 0);
   video_initialized = 1;
   /* FIXME: bitdepth value unused */
 }
 
 void SystemSetGamma(float red, float green, float blue) {
-  SDL_SetGamma(red, green, blue);
+  //SDL_SetGamma(red, green, blue);
 }
 
 int SystemCreateWindow(char *name) {
-  int f = SDL_OPENGL;
+  int f = 0;
   if(fullscreen & SYSTEM_FULLSCREEN)
     f |= SDL_FULLSCREEN;
   if( (screen = SDL_SetVideoMode( width, height, 16, f )) == NULL ) {
@@ -63,9 +66,23 @@ int SystemCreateWindow(char *name) {
     exit(1); /* OK: critical, no visual */
   }
   SDL_WM_SetCaption("GLtron", "");
+
+  SDL_SysWMinfo sysInfo;
+  SDL_VERSION(&sysInfo.version);
+
+  if(SDL_GetWMInfo(&sysInfo) <= 0)
+    exit(1); /* OK: critical, no visual */
+
+  enum swl_result result = swl_context_allocate(sysInfo.info.x11.window, XOpenDisplay(0));
+
+  if(result != SWLR_OK) {
+    fprintf(stderr, "[system] Couldn't create context, %d\n", result);
+    exit(1); /* OK: critical, no visual */
+  }
+
   glClearColor(0,0,0,0);
   glClear(GL_COLOR_BUFFER_BIT);
-  SDL_GL_SwapBuffers();
+  swl_swap();
   return 1;
 }
 
@@ -78,6 +95,7 @@ void SystemDestroyWindow(int id) {
 	 * caused by this, but I can't remember what they where
 	 */
 		 
+  swl_quit();
   SDL_QuitSubSystem(SDL_INIT_VIDEO);
   video_initialized = 0;
 }
